@@ -16,7 +16,7 @@ def lorenz(xyz, *, sigma, ro, beta):
     dz = x*y - beta*z
     return num.array([dx, dy, dz])
 
-dt = 0.1 # delka casoveho kroku
+dt = 0.01 # delka casoveho kroku
 kroku = 1000 # pocet kroku
 
 podm = num.empty((kroku + 1, 3))  # vice pocatecnich podminek

@@ -32,6 +32,6 @@ ax.set_xlabel("X")
 ax.set_ylabel("Y")
 ax.set_zlabel("Z")
 # ax.set_title("Lorenzuv atraktor")
-mal.axis('off') # bez os
+# mal.axis('off') # bez os
 
 mal.show()

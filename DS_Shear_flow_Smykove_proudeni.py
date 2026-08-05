@@ -1,0 +1,37 @@
+# Vykresli fazovy portrety typu Smykove proudeni
+# nad primkou je tok jednim smerem a pod osou opacnym smerem
+
+# Matice J = ([[0,1],[0,0]])
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def soustava(x,y):
+    dx = y 
+    dy = np.zeros_like(y) # protoze ma byt 0 a vysledek je prazdny graf
+    return dx, dy 
+
+# Vytvoření mříže bodů ve fázovém prostoru
+x = np.linspace(-2, 2, 100)
+y = np.linspace(-0.5, 0.5, 100)
+X, Y = np.meshgrid(x, y)
+
+# Výpočet rychlostí (vektorů) v každém bodě
+dX, dY = soustava(X, Y)
+
+plt.figure(figsize=(8, 8))
+rychlost = np.sqrt(dX**2 + dY**2)
+plt.streamplot(X, Y, dX, dY, color=rychlost, cmap='coolwarm', density=0.4, linewidth=1.5)
+# streamplot - trajektorie se sipkami smeru
+
+# Vykreslení stabilního pole šipek
+plt.quiver(X, Y, dX, dY, color='crimson', scale=50)
+
+# Cisteni grafu
+plt.axhline(0, color='black', linewidth=0.8, linestyle='--')
+plt.xlabel('Stavová proměnná $x$')
+plt.ylabel('Stavová proměnná $y$')
+plt.title('Fázový portrét lineárního systému typu Smykové proudění', fontsize=12)
+plt.grid(True, linestyle=':', alpha=0.5)
+
+plt.show()

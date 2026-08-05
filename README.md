@@ -27,20 +27,20 @@ The scripts utilize `numpy` for efficient matrix operations and vectorization, a
 The scripts are organized in a structured format mapping the complete taxonomy of 2D linear systems and specific boundary cases (where the determinant equals zero), along with a classic nonlinear oscillator.
 
 ### 1. Linear Systems (Isolated Critical Points)
-*   **`source_node_uzel_zridlo.py`**: Node source (\(\lambda_1 \neq \lambda_2 > 0\)). Trajectories move directly outwards from the origin.
-*   **`sink_node_uzel_vylevka.py`**: Node sink (\(\lambda_1 \neq \lambda_2 < 0\)). All trajectories asymptotically flow into the origin.
-*   **`saddle_point_sedlo.py`**: Saddle point (\(\lambda_1 > 0, \lambda_2 < 0\)). Real eigenvalues with opposite signs creating hyperbolic flows.
-*   **`center_stred.py`**: Center (\(\lambda_{1,2} = \pm i\beta\)). Purely imaginary eigenvalues generating stable, continuous periodic orbits.
-*   **`unstable_focus_ohnisko_zridlo.py`**: Spiral source (\(\lambda_{1,2} = \alpha \pm i\beta, \alpha > 0\)). Trajectories spiral outwards.
-*   **`stable_focus_ohnisko_vylevka.py`**: Spiral sink (\(\lambda_{1,2} = \alpha \pm i\beta, \alpha < 0\)). Trajectories spiral inwards to the sink.
+*   **`Source_node_Uzel_zridlo.py`**: Node source (\(\lambda_1 \neq \lambda_2 > 0\)). Trajectories move directly outwards from the origin.
+*   **`Sink_node_Uzel_vylevka.py`**: Node sink (\(\lambda_1 \neq \lambda_2 < 0\)). All trajectories asymptotically flow into the origin.
+*   **`Saddle_point_Sedlo.py`**: Saddle point (\(\lambda_1 > 0, \lambda_2 < 0\)). Real eigenvalues with opposite signs creating hyperbolic flows.
+*   **`Center_Stred.py`**: Center (\(\lambda_{1,2} = \pm i\beta\)). Purely imaginary eigenvalues generating stable, continuous periodic orbits.
+*   **`Unstable_focus_Ohnisko_zridlo.py`**: Spiral source (\(\lambda_{1,2} = \alpha \pm i\beta, \alpha > 0\)). Trajectories spiral outwards.
+*   **`Stable_focus_Ohnisko_vylevka.py`**: Spiral sink (\(\lambda_{1,2} = \alpha \pm i\beta, \alpha < 0\)). Trajectories spiral inwards to the sink.
 
 ### 2. Degenerate & Non-Isolated Systems (\(\det(J) = 0\))
-*   **`line_of_critical_points_primka_kritickych_bodu.py`**: One zero eigenvalue (\(\lambda_1 = 0, \lambda_2 \neq 0\)). Generates an entire line of equilibrium points (\(y=0\)). Vectorized visualization implemented using `plt.quiver`.
-*   **`shear_flow_smykove_proudeni.py`**: Double zero eigenvalues in a Jordan block (\(\lambda_1 = \lambda_2 = 0\)). Simulates parallel shear fluid flows moving in opposite directions above and below the critical line.
-*   **`plane_of_critical_points_rovina_kritickych_bodu.py`**: Zero matrix system. Every point in the phase space is an equilibrium point. Outputs a static grid of stationary dots via `quiver`.
+*   **`Line_of_critical_points_Primka_kritickych_bodu.py`**: One zero eigenvalue (\(\lambda_1 = 0, \lambda_2 \neq 0\)). Generates an entire line of equilibrium points (\(y=0\)). Vectorized visualization implemented using `plt.quiver`.
+*   **`Shear_flow_Smykove_proudeni.py`**: Double zero eigenvalues in a Jordan block (\(\lambda_1 = \lambda_2 = 0\)). Simulates parallel shear fluid flows moving in opposite directions above and below the critical line.
+*   **`Plane_of_critical_points_Rovina_kritickych_bodu.py`**: Zero matrix system. Every point in the phase space is an equilibrium point. Outputs a static grid of stationary dots via `quiver`.
 
 ### 3. Nonlinear Systems
-*   **`nonlinear_pendulum_matematicke_kyvadlo.py`**: Simulation of the classical nonlinear pendulum governed by \(\ddot{\alpha} + \sin(\alpha) = 0\). Vibrate trajectories map both stable orbits (centers), unstable upright positions (saddles), and the **separatrix** bounding the oscillating and circulating regimes. It includes a programmatic calculation of non-zero critical points using `np.linalg.solve(J, -u)`.
+*   **`Nonlinear_pendulum_Matematicke_kyvadlo.py`**: Simulation of the classical nonlinear pendulum governed by \(\ddot{\alpha} + \sin(\alpha) = 0\). Vibrate trajectories map both stable orbits (centers), unstable upright positions (saddles), and the **separatrix** bounding the oscillating and circulating regimes. It includes a programmatic calculation of non-zero critical points using `np.linalg.solve(J, -u)`.
 
 ---
 

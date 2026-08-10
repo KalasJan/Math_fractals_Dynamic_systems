@@ -42,7 +42,7 @@ for idx, bod in enumerate(kriticke):
     if lam1_real == 0 and lam2_real == 0 and lam1_imag == 0:
         if infty:
             # Pokud je hodnost Jacobianu 1, body tvoří přímku. Pokud 0, tvoří celou rovinu.
-            hodnost = J_v_bode.rank()
+            hodnost = Jac_bod.rank()
             if hodnost == 1:
                 typ = "Přímka kritických bodů (Nekonečně mnoho řešení)"
                 barva = "purple"
